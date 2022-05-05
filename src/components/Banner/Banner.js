@@ -1,5 +1,6 @@
 import { Carousel } from 'react-carousel-minimal';
 
+
 const Banner = () => {
     const data = [
         {
@@ -87,6 +88,7 @@ const Banner = () => {
                     />
                 </div>
             </div>
+
         </div>
     );
 }
