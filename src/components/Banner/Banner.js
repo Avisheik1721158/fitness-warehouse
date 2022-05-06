@@ -56,7 +56,7 @@ const Banner = () => {
     return (
         <div className="App">
             <div style={{ textAlign: "center" }}>
-                <h2 className='text-5xl text-purple-700 md:font-medium font-normal'>The Largest Fitness Warehouse </h2>
+                <h2 className='text-5xl text-slate-100 md:font-medium font-normal'>The Largest Fitness Warehouse </h2>
                 <p className='mt-2 italic text-4xl text-rose-600'>Gym equipment that never fails.</p>
                 <div style={{
                     padding: "0 20px"

@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Rubber coated Premium weight",
+        "image": "https://ibb.co/c8sF88W",
+        "description": "These 5-200 kg rubber coated dumbbells come with two types. This combination of gym tools is best for a perfect workout. For the perfect muscle-building long-lasting and highly durable muscles, these are the best",
+        "price": "$275",
+        "quantity": 11,
+        "supplier name": "Sports World"
+    },
+    {
+        "name": "Treadmill",
+        "image": "https://ibb.co/qCvcfnw",
+        "description": "There are so many types and a section of treadmills for single and multi-station gyms. These are mainly designed for heavy-duty and commercial use. Its handles are so comfortable for gripping. Its weight carrying capacity is 180 to 200 kgs. The treadmill is mainly a kind of device that basically is used for running, climbing or walking while standing in the same spot.",
+        "price": "$150",
+        "quantity": 7,
+        "supplier name": "True fitness"
+    },
+    {
+        "name": "Dumbbells",
+        "image": "https://ibb.co/Pj1Ppx2",
+        "description": "There are several types of dumbbells available like Dumbbell rod, steel chrome dumbbell, plastic dumbbell, L-key dumbbell, Hexa dumbbell and bouncer dumbbell. These dumbbells come with 5 kgs to 200kgs. Lightweight is for beginners as well as the higher weights for the experts accordingly.",
+        "price": "$150",
+        "quantity": 25,
+        "supplier name": "Octane fitness"
+    },
+    {
+        "name": "Exercise ball",
+        "image": "https://ibb.co/Pj1Ppx2",
+        "description": "The exercise or yoga ball is made with very soft elastic that is mainly a diameter of 35 to 85 centimetres. This hollow ball is filled with air. If you remove the valve stem the air pressure will get changed and then you can let the ball deflate or fill it with air.",
+        "price": "$50",
+        "quantity": 22,
+        "supplier name": "Icon Health"
+    },
+    {
+        "name": "Adjustable bench",
+        "image": "https://ibb.co/XCQhpPv",
+        "description": "The adjustable bench is a very essential gym equipment to have in your Gym. It has a flat, incline and decline position where you can have entirely six several positions curves steady for a coalition grip, the strong tubular metal pattern makes this equipment extra sturdy and self-assembly required entirely foldable & portable chip-resistant pattern wrapped with some epoxy powder and these are coated & strongly construct that can endure for a high time..",
+        "price": "$180",
+        "quantity": 14,
+        "supplier name": "Leg fitness"
+    },
+    {
+        "name": "Flat bench press",
+        "image": "https://ibb.co/fHVk1BL",
+        "description": "The flat bench press is quite short. It is best for any types of upper body exercise. Mainly best for the chest workouts. With this bench press, one needs to keep the back straight not in a position of the arch. Its market price starts from 9000 rupees.",
+        "price": "$170",
+        "quantity": 16,
+        "supplier name": "Men Power"
+    }
+]

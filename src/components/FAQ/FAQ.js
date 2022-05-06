@@ -10,15 +10,15 @@ const FAQ = () => {
                     <p className="mt-1 max-w-2xl text-sm text-gray-500">Pick some general questions</p>
                 </div>
                 <div className="border-t border-gray-200">
-                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <span class="text-sm font-medium text-gray-500">When will my order arrive?</span>
-                        <span class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">We do our best to insure all orders are delivered within 48 hours of receiving payment, but please allow up  to 5days for delivery.
+                    <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <span className="text-sm font-medium text-gray-500">When will my order arrive?</span>
+                        <span className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">We do our best to insure all orders are delivered within 48 hours of receiving payment, but please allow up  to 5days for delivery.
 
                             Exceptions : Pre-orders,Back-orders and Trade orders etc.</span>
                     </div>
-                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <span class="text-sm font-medium text-gray-500">What are your payment options ?</span>
-                        <span class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">We accept the following forms of payment:
+                    <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <span className="text-sm font-medium text-gray-500">What are your payment options ?</span>
+                        <span className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">We accept the following forms of payment:
                             <br />
                             <span> -- PayPal  </span>
                             <br />
@@ -53,15 +53,15 @@ const FAQ = () => {
 
                 </div>
                 <div className="border-t border-gray-200">
-                    <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <span class="text-sm font-medium text-gray-500">Can I pick up my online purchases in person to save on delivery fees?</span>
-                        <span class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">This option is available to our trade customers only .
+                    <div className="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <span className="text-sm font-medium text-gray-500">Can I pick up my online purchases in person to save on delivery fees?</span>
+                        <span className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">This option is available to our trade customers only .
 
                         </span>
                     </div>
-                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <span class="text-sm font-medium text-gray-500">Returns ? ?</span>
-                        <span class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">If you are not completely satisfied with your purchase..simply return in its original condition with the receipt within 14 days of purchase. We will issue a refund asap
+                    <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <span className="text-sm font-medium text-gray-500">Returns ? ?</span>
+                        <span className="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">If you are not completely satisfied with your purchase..simply return in its original condition with the receipt within 14 days of purchase. We will issue a refund asap
 
 
                             When  do items need to be returned by?
