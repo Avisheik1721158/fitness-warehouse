@@ -4,41 +4,108 @@ import { useParams } from 'react-router-dom';
 
 const InventoryDetails = () => {
     const { inventoryId } = useParams();
+
+
     // useInventoryDetails
     // const [inventory] = useInventoryDetails(inventoryId);
     const [inventory, setInventory] = useState({});
     useEffect(() => {
         const url = `http://localhost:5000/items/${inventoryId}`;
 
-        console.log(url);
+        // console.log(url);
         fetch(url)
             .then(res => res.json())
             .then(data => setInventory(data));
-    }, [])
+    }, [inventory]);
+    // decrease quantity
+    const decreaseQuantity = () => {
+        const oldQuantity = parseInt(inventory.quantity);
+        const quantity = oldQuantity - 1;
+
+        const updateQuantity = { quantity };
+        console.log(updateQuantity);
+        // send data to the server
+        const url = `http://localhost:5000/items/${inventoryId}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updateQuantity)
+            // body: (updateQuantity)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('success', data);
+                alert('update quantity successfully!!');
+            })
+
+
+    };
+
+
+
+
+
+
+
+
+    // const decreaseQuantity = () => {
+
+
+
+    //     if (updatequantity === 0) {
+    //         setUpdatequantity(0);
+    //         console.log(updatequantity);
+    //     }
+    //     else {
+    //         setUpdatequantity(updatequantity - 1);
+    //         console.log(updatequantity);
+    //     }
+
+
+
+    // }
+
+
+
+
+    // setQuantity(no);
+    // console.log(quantity);
+    // if (quantity === 0) {
+    //     setQuantity(0);
+    //     // console.log(quantity);
+    // }
+    // else {
+    //     setQuantity(quantity - 1);
+    //     // console.log(quantity);
+    // }
+
+
+
+
+
 
     return (
         <div className=''>
-            <h2 className='text-white text-center'>
-                Welcome to details :
+            <h2 className='mt-2 text-white text-4xl text-center'>
+                Update Your Inventory :
             </h2>
-            <div className=" mt-5 mx-12 sm:grid-cols-1 sm:mx-10   lg:grid-col-3 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-700 dark:border-gray-700">
 
-                <img className="rounded-t-lg " src={inventory.image} alt="" />
-
-                <div className="p-5">
-
+            <div className="mt-10 mb-10  mx-auto flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-green-400 dark:border-gray-700 dark:bg-rose-700 dark:hover:bg-green-700">
+                <img className="object-cover w-50 h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src={inventory.image} alt=""></img>
+                <div className="flex flex-col justify-between p-4 leading-normal">
                     <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{inventory.name}</h5>
-
-                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{inventory.description?.length === 212 ? inventory.description : inventory.description?.slice(0, 212)}</p>
-                    <p className="mb-3 font-bold text-red-700 dark:text-red-400">  <span className='text-slate-100'>Price :  </span> {inventory.price}</p>
-                    <p className="mb-3 font-bold text-green-700 dark:text-green-400"><span className='text-slate-100'>Quantity  : </span> {inventory.quantity}</p>
-                    <p className="mb-3 font-bold text-pink-700 dark:text-pink-400"><span className='text-slate-100'>Supplier Name  : </span> {inventory.supplier_name}</p>
-                    <button className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <p className="mb-3 font-normal text-slate-100 dark:text-slate-100">{inventory.description}</p>
+                    <p className="mb-3 font-normal text-slate-100 dark:text-slate-100">Price: {inventory.price}</p>
+                    <p className="mb-3 font-normal text-slate-100 dark:text-slate-100">Quantity: {inventory.quantity}</p>
+                    <p className="mb-3 font-normal text-slate-100 dark:text-slate-100">Supplier Name: {inventory.supplier_name}</p>
+                    <button onClick={() => decreaseQuantity()} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded">
                         Delivered
-
                     </button>
                 </div>
             </div>
+
         </div>
     );
 };

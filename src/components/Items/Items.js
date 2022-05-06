@@ -11,10 +11,10 @@ const Items = () => {
     return (
         <div className='container'>
             <div className='row'>
-                <h2 className='mt-28 text-5xl text-center'>
+                <h2 className='mt-28 text-5xl text-white text-center'>
                     Our Inventory
                 </h2>
-                <div className='mt-5 grid lg:grid-cols-3 md:grid-cols-2'>
+                <div className='mt-5 grid lg:grid-cols-3'>
                     {
                         items.map(item => <Item key={item._id} item={item} ></Item>)
                     }
