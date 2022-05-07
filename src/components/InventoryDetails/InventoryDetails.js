@@ -1,18 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-// import useInventoryDetails from '../useInventoryDetails/useInventoryDetails';
 
 const InventoryDetails = () => {
     const { inventoryId } = useParams();
-
-
-    // useInventoryDetails
-    // const [inventory] = useInventoryDetails(inventoryId);
     const [isLoading, setIsLoading] = useState(false);
     const [inventory, setInventory] = useState({});
     useEffect(() => {
         const url = `http://localhost:5000/items/${inventoryId}`;
-
         // console.log(url);
         fetch(url)
             .then(res => res.json())
@@ -21,8 +15,38 @@ const InventoryDetails = () => {
     // decrease quantity
     const decreaseQuantity = () => {
         const oldQuantity = parseInt(inventory.quantity);
-        const quantity = oldQuantity - 1;
+        let quantity = oldQuantity - 1;
+        if (quantity < 0) {
+            quantity = 0;
+        }
+        let updateQuantity = { quantity };
 
+
+        console.log(updateQuantity);
+        // send data to the server
+        const url = `http://localhost:5000/items/${inventoryId}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updateQuantity)
+            // body: (updateQuantity)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('success', data);
+                alert('update quantity successfully!!');
+            })
+        setIsLoading(true);
+    };
+
+    const increaseQuantity = (event) => {
+        event.preventDefault();
+        const addQuantity = event.target.add.value;
+        console.log(addQuantity);
+        const oldQuantity = parseInt(inventory.quantity);
+        const quantity = oldQuantity + parseInt(addQuantity);
         const updateQuantity = { quantity };
         console.log(updateQuantity);
         // send data to the server
@@ -40,63 +64,16 @@ const InventoryDetails = () => {
                 console.log('success', data);
                 alert('update quantity successfully!!');
             })
-
+        event.target.reset();
         setIsLoading(true);
 
-
-
-
     };
-
-
-
-
-
-
-
-
-    // const decreaseQuantity = () => {
-
-
-
-    //     if (updatequantity === 0) {
-    //         setUpdatequantity(0);
-    //         console.log(updatequantity);
-    //     }
-    //     else {
-    //         setUpdatequantity(updatequantity - 1);
-    //         console.log(updatequantity);
-    //     }
-
-
-
-    // }
-
-
-
-
-    // setQuantity(no);
-    // console.log(quantity);
-    // if (quantity === 0) {
-    //     setQuantity(0);
-    //     // console.log(quantity);
-    // }
-    // else {
-    //     setQuantity(quantity - 1);
-    //     // console.log(quantity);
-    // }
-
-
-
-
-
 
     return (
         <div className=''>
             <h2 className='mt-2 text-white text-4xl text-center'>
                 Update Your Inventory :
             </h2>
-
             <div className="mt-10 mb-10  mx-auto flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-green-400 dark:border-gray-700 dark:bg-rose-700 dark:hover:bg-green-700">
                 <img className="object-cover w-50 h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src={inventory.image} alt=""></img>
                 <div className="flex flex-col justify-between p-4 leading-normal">
@@ -111,6 +88,17 @@ const InventoryDetails = () => {
                 </div>
             </div>
 
+            <form onSubmit={increaseQuantity} className="w-full max-w-sm mx-auto mb-5">
+                <div className="flex items-center border-b border-teal-500 py-2">
+                    {/* <input className="appearance-none bg-transparent border-none w-full text-slate-100 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" name='add' placeholder="Add number of your item" /> */}
+                    <input className="appearance-none bg-transparent border-none w-full text-slate-100 mr-3 py-1 px-2 leading-tight focus:outline-none" type=" number" name="add" placeholder='Add the number of your item' required />
+                    {/* <button className="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="button">
+                        Restock item
+                    </button> */}
+                    <input className="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="submit" value="Restock item" />
+
+                </div>
+            </form>
         </div>
     );
 };
