@@ -8,6 +8,7 @@ const InventoryDetails = () => {
 
     // useInventoryDetails
     // const [inventory] = useInventoryDetails(inventoryId);
+    const [isLoading, setIsLoading] = useState(false);
     const [inventory, setInventory] = useState({});
     useEffect(() => {
         const url = `http://localhost:5000/items/${inventoryId}`;
@@ -39,6 +40,10 @@ const InventoryDetails = () => {
                 console.log('success', data);
                 alert('update quantity successfully!!');
             })
+
+        setIsLoading(true);
+
+
 
 
     };
