@@ -7,19 +7,10 @@ const Item = ({ item }) => {
     const navigateToInventoryDetails = id => {
         navigate(`items/${id}`);
     }
+    console.log(item);
     return (
         <div className='mt-2 mx-5'>
 
-            {/* <img classNameName='w-50' src={image} alt=""></img>
-            <h2>{name}</h2>
-            <p><small>{description}</small></p>
-            <p><small>{price}</small></p>
-            <p><small>{quantity}</small></p>
-            <h2>{supplier_name}</h2>
-            <button>Stock Update</button> */}
-            {/*
-               Rubber coated weight 
-             */}
 
 
             <div className=" mt-5 mx-12 sm:grid-cols-1 sm:mx-10   lg:grid-col-3 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-700 dark:border-gray-700">

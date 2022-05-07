@@ -41,10 +41,34 @@
     },
     {
         "name": "Flat bench press",
-        "image": "https://ibb.co/fHVk1BL",
+        "image": "https://5.imimg.com/data5/HD/RG/FF/SELLER-15561817/olympic-flat-bench-press-500x500-500x500.jpg",
         "description": "The flat bench press is quite short. It is best for any types of upper body exercise. Mainly best for the chest workouts. With this bench press, one needs to keep the back straight not in a position of the arch. Its market price starts from 9000 rupees.",
         "price": "$170",
         "quantity": 16,
         "supplier name": "Men Power"
+    },
+    {
+        "name": "Spinning Bike for Home",
+        "image": "https://www.shuafitness.com/wp-content/uploads/2021/09/SH-B5961S-Spinning-Bike-for-Home-1-768x572.png",
+        "description": "Spinning bike has optimal qualities that make it stand out from the crowd. The steel-made wheel and the elastic belt provide the whisper-quiet, stable and smooth training experience. With customized design, the ergonomics seat can be adjusted in four directions, allowing people with different heights to carry out comfortable and interesting training.",
+        "price": "$122",
+        "quantity": 21,
+        "supplier name": "Puma"
+    },
+    {
+        "name": "Push Ups Stands Grip ",
+        "image": "https://www.kablewala.com.bd/images/detailed/108/102_kl4t-ry.jpg",
+        "description": "push-up bars make push-ups incredibly easier by reducing the stress on the targeted muscle groups and joints. More importantly, they will improve your alignment by allowing you to find a comfortable position as you lift and dip your arms.",
+        "price": "$12",
+        "quantity": 61,
+        "supplier name": "Adidas"
+    },
+    {
+        "name": "Strength Training",
+        "image": "https://garagegympro.com/wp-content/uploads/2021/09/Valor-Athletics-Inc.-BD-%E2%80%93-7-Power-Rack-with-Lat-Pull.jpg",
+        "description": "Power rack, also known as full rack is a massive square-like piece of equipment, which can be used for various exercise, including squats, bench presses, pull-ups and some of them also include dip station.It’s a multi-purpose piece of equipment that takes a lot of space.",
+        "price": "$1000",
+        "quantity": 32,
+        "supplier name": "Star Sports"
     }
 ]

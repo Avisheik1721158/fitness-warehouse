@@ -8,6 +8,8 @@ import Footer from './components/Footer/Footer';
 import FAQ from './components/FAQ/FAQ';
 import Location from './components/Location/Location';
 import InventoryDetails from './components/InventoryDetails/InventoryDetails';
+import ManageInventories from './components/ManageInventories/ManageInventories';
+import AddItem from './components/AddItem/AddItem';
 
 
 
@@ -24,6 +26,8 @@ function App() {
           <Route path="/items/:inventoryId" element={<InventoryDetails></InventoryDetails>}></Route>
           <Route path="/FAQ" element={<FAQ></FAQ>}></Route>
           <Route path="/location" element={<Location></Location>}></Route>
+          <Route path="/manageinventories" element={<ManageInventories></ManageInventories>}></Route>
+          <Route path="/addItem" element={<AddItem></AddItem>}></Route>
         </Routes>
 
 
