@@ -2,6 +2,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { getAuth, sendEmailVerification } from 'firebase/auth';
+import Loading from '../Loading/Loading';
+import SocialLogin from '../SocialLogin/SocialLogin';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -18,8 +23,11 @@ const Register = () => {
         const auth = getAuth();
         sendEmailVerification(auth.currentUser)
             .then(() => {
-                console.log("email veri sent");
+                toast("email veri sent");
             });
+    }
+    if (loading) {
+        return <Loading></Loading>
     }
 
 
@@ -29,14 +37,10 @@ const Register = () => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
-
-
         createUserWithEmailAndPassword(email, password);
-        verifyEmail();
     }
-    if (user) {
-        navigate('/login');
-    }
+    verifyEmail();
+
 
     return (
 
@@ -61,15 +65,13 @@ const Register = () => {
                     </div>
                     <div className="mt-6">
                         <button className="w-full inline-flex items-center justify-center px-4 py-2 bg-red-600 border border-transparent rounded-md font-semibold capitalize text-white hover:bg-red-700 active:bg-red-700 focus:outline-none focus:border-red-700 focus:ring focus:ring-red-200 disabled:opacity-25 transition">Sign Up</button>
+                        <ToastContainer />
                     </div>
                     <h2 className=" mt-2 text-sm"> Aleady have an account? </h2>
                     <Link className='' to='/login'>Login</Link>
 
                 </form>
-                <button type="button" className="mx-28 mt-4 text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
-                    <svg className="w-4 h-4 mr-2 -ml-1" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><path fill="currentColor" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"></path></svg>
-                    Sign in with Google
-                </button>
+                <SocialLogin></SocialLogin>
             </div>
         </div>
 

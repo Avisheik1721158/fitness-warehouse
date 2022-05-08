@@ -15,6 +15,7 @@ import Register from './components/Register/Register';
 import RequireAuth from './components/Requireauth/RequireAuth';
 import Blogs from './components/Blogs/Blogs';
 import NotFound from './components/NotFound/NotFound';
+import MyItem from './components/MyItem/MyItem';
 
 
 
@@ -27,7 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>
           <Route path="/about" element={<About></About>}></Route>
-          <Route path="/inventory" element={<Inventory></Inventory>}></Route>
+          <Route path="/myitem" element={<MyItem></MyItem>}></Route>
           <Route path="/items/:inventoryId" element={<RequireAuth><InventoryDetails></InventoryDetails></RequireAuth>}></Route>
           <Route path="/FAQ" element={<FAQ></FAQ>}></Route>
           <Route path="/location" element={<Location></Location>}></Route>

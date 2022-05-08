@@ -57,7 +57,7 @@ const AddItem = () => {
                 <input type="text" name="quantity" placeholder='quantity' required />
                 <input type="text" name="supplier_name" placeholder='supplier_name' required />
 
-                <input type="submit" value="Add user" />
+                <input type="submit" value="Add Item" />
 
 
                 {/* <input className='text-slate-100' type="submit" value="Add Item" /> */}

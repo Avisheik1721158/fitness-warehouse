@@ -1,9 +1,16 @@
 
 import useItems from '../hook/useItems';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import Loading from '../Loading/Loading';
 
 const ManageItems = ({ item }) => {
     const { name, price, quantity, supplier_name } = item;
     const [items, setItems] = useItems();
+    // const [user, loading] = useAuthState(auth);
+    // if (loading) {
+    //     return <Loading></Loading>
+    // }
     // const [loading, setLoading] = useState(false)
     // useEffect(() => {
     //     setLoading(true)
@@ -44,11 +51,13 @@ const ManageItems = ({ item }) => {
 
 
 
+
         }
 
 
 
     }
+
 
 
     return (

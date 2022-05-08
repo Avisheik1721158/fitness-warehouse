@@ -3,6 +3,7 @@ import React from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
@@ -23,6 +24,11 @@ const Login = () => {
             <p className='text-red-700'>Error: {error.message}</p>
         </div>
 
+    }
+
+
+    if (loading) {
+        return <Loading></Loading>
     }
 
     if (user) {
