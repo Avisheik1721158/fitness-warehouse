@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import { getAuth, sendEmailVerification } from 'firebase/auth';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -11,6 +12,15 @@ const Register = () => {
         error,
 
     ] = useCreateUserWithEmailAndPassword(auth);
+    const verifyEmail = () => {
+
+
+        const auth = getAuth();
+        sendEmailVerification(auth.currentUser)
+            .then(() => {
+                console.log("email veri sent");
+            });
+    }
 
 
     // const emailRef = useRef('');
@@ -19,13 +29,15 @@ const Register = () => {
         event.preventDefault();
         const email = event.target.email.value;
         const password = event.target.password.value;
-        console.log(email, password);
+
 
         createUserWithEmailAndPassword(email, password);
+        verifyEmail();
     }
     if (user) {
-        navigate('/');
+        navigate('/login');
     }
+
     return (
 
         <div className="w-full min-h-screen bg-gray-50 flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
