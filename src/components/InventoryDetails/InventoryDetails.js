@@ -6,7 +6,7 @@ const InventoryDetails = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [inventory, setInventory] = useState({});
     useEffect(() => {
-        const url = `http://localhost:5000/items/${inventoryId}`;
+        const url = `https://secure-retreat-48774.herokuapp.com/items/${inventoryId}`;
         // console.log(url);
         fetch(url)
             .then(res => res.json())
@@ -24,7 +24,7 @@ const InventoryDetails = () => {
 
         console.log(updateQuantity);
         // send data to the server
-        const url = `http://localhost:5000/items/${inventoryId}`;
+        const url = `https://secure-retreat-48774.herokuapp.com/items/${inventoryId}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -50,7 +50,7 @@ const InventoryDetails = () => {
         const updateQuantity = { quantity };
         console.log(updateQuantity);
         // send data to the server
-        const url = `http://localhost:5000/items/${inventoryId}`;
+        const url = `https://secure-retreat-48774.herokuapp.com/items/${inventoryId}`;
         fetch(url, {
             method: 'PUT',
             headers: {

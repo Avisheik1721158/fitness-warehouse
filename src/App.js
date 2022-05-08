@@ -10,6 +10,9 @@ import Location from './components/Location/Location';
 import InventoryDetails from './components/InventoryDetails/InventoryDetails';
 import ManageInventories from './components/ManageInventories/ManageInventories';
 import AddItem from './components/AddItem/AddItem';
+import Login from './components/Login/Login';
+import Register from './components/Register/Register';
+import RequireAuth from './components/Requireauth/RequireAuth';
 
 
 
@@ -23,11 +26,13 @@ function App() {
           <Route path="/" element={<Home></Home>}></Route>
           <Route path="/about" element={<About></About>}></Route>
           <Route path="/inventory" element={<Inventory></Inventory>}></Route>
-          <Route path="/items/:inventoryId" element={<InventoryDetails></InventoryDetails>}></Route>
+          <Route path="/items/:inventoryId" element={<RequireAuth><InventoryDetails></InventoryDetails></RequireAuth>}></Route>
           <Route path="/FAQ" element={<FAQ></FAQ>}></Route>
           <Route path="/location" element={<Location></Location>}></Route>
           <Route path="/manageinventories" element={<ManageInventories></ManageInventories>}></Route>
           <Route path="/addItem" element={<AddItem></AddItem>}></Route>
+          <Route path="/register" element={<Register></Register>}></Route>
+          <Route path="/login" element={<Login></Login>}></Route>
         </Routes>
 
 

@@ -23,7 +23,7 @@ const ManageItems = ({ item }) => {
                 Loading...
             </button>
             console.log('Delete this item', id);
-            const url = `http://localhost:5000/items/${id}`;
+            const url = `https://secure-retreat-48774.herokuapp.com/items/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -35,7 +35,7 @@ const ManageItems = ({ item }) => {
 
 
                         setItems(remaining);
-                        console.log(items);
+                        // console.log(items);
                     }
 
 
@@ -43,10 +43,13 @@ const ManageItems = ({ item }) => {
             window.location.reload(true);
 
 
+
         }
 
 
+
     }
+
 
     return (
 

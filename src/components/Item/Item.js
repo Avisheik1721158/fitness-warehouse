@@ -7,7 +7,7 @@ const Item = ({ item }) => {
     const navigateToInventoryDetails = id => {
         navigate(`items/${id}`);
     }
-    console.log(item);
+    // console.log(item);
     return (
         <div className='mt-2 mx-5'>
 
